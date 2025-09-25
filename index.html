@@ -36,9 +36,43 @@
     .hamb{display:none;background:transparent;border:0;font-size:16px}
     .cta-mini{display:none}
     @media (max-width:900px){ nav{display:none} .hamb{display:inline-block} .cta-mini{display:inline-flex} }
-    .drawer{display:none;position:fixed;inset:56px 0 0 0;background:#ffffff;border-top:1px solid var(--line);padding:10px 16px}
-    .drawer a{display:block;padding:14px 6px;border-bottom:1px solid var(--line);text-decoration:none;color:#29445d;font-weight:600}
-    .drawer.show{display:block;animation:fade .2s ease-out}
+    .drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(15,42,71,0.18);
+  padding: 24px 18px 0 18px;
+  z-index: 999;
+  overflow-y: auto;
+}
+.drawer.show {
+  display: block;
+  animation: fade .2s ease-out;
+}
+.drawer a {
+  display: block;
+  padding: 18px 6px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: #29445d;
+  font-weight: 600;
+  background: transparent;
+  font-size: 1.15rem;
+}
+.drawer button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #29445d;
+  cursor: pointer;
+}
 
     .container{max-width:var(--container);margin:0 auto;padding:24px}
     .grid{display:grid;gap:18px}
@@ -236,7 +270,7 @@
   }
 }
 
-/* Modal de Política de Privacidad: agrega esto antes de </body> */
+/* Modal de Política de Privacidad:*/
 #modal-privacidad {
   display: none;
   position: fixed;
@@ -300,6 +334,7 @@
       <a class="btn btn-ghost cta-mini" href="#contacto">Contáctanos</a>
     </div>
     <div id="drawer" class="drawer">
+      <button onclick="toggleDrawer(false)" style="background:none;border:none;font-size:2rem;color:#29445d;position:absolute;top:18px;right:18px;cursor:pointer;" aria-label="Cerrar menú">×</button>
       <a href="#inicio" onclick="toggleDrawer(false)">Inicio</a>
       <a href="#ventajas" onclick="toggleDrawer(false)">Ventajas</a>
       <a href="#modulos" onclick="toggleDrawer(false)">Módulos</a>
