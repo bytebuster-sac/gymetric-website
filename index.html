@@ -61,7 +61,12 @@
     .device .lcd{background:#0a1b32;border-radius:16px;padding:22px;min-height:180px;display:flex;align-items:center;justify-content:center}
     .device .lcd b{color:#C6EF43}
 
-    .tile{display:flex;gap:12px;align-items:flex-start}
+    .tile{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
     .card-icon{font-size: 28px; margin-top: 18px;       /* tamaño del ícono */
       color: #C6EF43;        /* color principal (azul oscuro) */
       background: none;      /* quita el cuadrito azul */
@@ -69,16 +74,21 @@
       height: auto;
       display: inline-flex;
       align-items: center;
-      justify-content: center;}
+      justify-content: center;
+    }
 
-      .mod-icon{font-size: 32px; margin-top: 6px;    margin-left: -4px;   /* tamaño del ícono */
+    .mod-icon {
+      font-size: 32px;
+      margin-top: 6px;
+      margin-left: -4px;   /* tamaño del ícono */
       color: #C6EF43;        /* color principal (azul oscuro) */
       background: none;      /* quita el cuadrito azul */
       width: auto;
       height: auto;
       display: inline-flex;
       align-items: center;
-      justify-content: center;}
+      justify-content: center;
+    }
 
 
     .check{list-style:none;padding:0;margin:0}
@@ -109,48 +119,48 @@
     .iconbtn svg path{fill:#C6EF43}
 
     .card-tile {
-  display: block;
-  text-align: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-.card-tile .card-icon,
-.card-tile .mod-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #C6EF43;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-.card-tile h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-/* Solo para el título "Objetivos" */
-.card-tile > h3 {
-  font-size: 2rem;      /* más grande que el default */
-  font-weight: 800;     /* más grueso */
-  letter-spacing: 0.5px;
-  margin-bottom: 28px;  /* mantiene el espacio debajo de "Objetivos" */
-}
-.card-tile p {
-  margin-bottom: 0;
-}
+      display: block;
+      text-align: center;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+    .card-tile .card-icon,
+    .card-tile .mod-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #C6EF43;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+    .card-tile h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    /* Solo para el título "Objetivos" */
+    .card-tile > h3 {
+      font-size: 2rem;      /* más grande que el default */
+      font-weight: 800;     /* más grueso */
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;  /* mantiene el espacio debajo de "Objetivos" */
+    }
+    .card-tile p {
+      margin-bottom: 0;
+    }
 
-/* Títulos grandes y consistentes para Misión, Visión, Objetivos, Nosotros, Módulos y Contáctanos */
-.card-tile > h3,
-.card-tile-title,
-h2.reveal,
-.contact-form h2,
-#nosotros h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  margin-bottom: 28px;
-  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
-}
+    /* Títulos grandes y consistentes para Misión, Visión, Objetivos, Nosotros, Módulos y Contáctanos */
+    .card-tile > h3,
+    .card-tile-title,
+    h2.reveal,
+    .contact-form h2,
+    #nosotros h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    }
   </style>
   <!-- Font Awesome -->
   <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -183,7 +193,7 @@ h2.reveal,
       <a href="#ventajas" onclick="toggleDrawer(false)">Ventajas</a>
       <a href="#modulos" onclick="toggleDrawer(false)">Módulos</a>
       <a href="#nosotros" onclick="toggleDrawer(false)">Nosotros</a>
-      <a href="#Preguntas frecuentes" onclick="toggleDrawer(false)">Preguntas frecuentes</a>
+      <a href="#PreguntasFrecuentes" onclick="toggleDrawer(false)">Preguntas frecuentes</a>
       <a href="#contacto" onclick="toggleDrawer(false)">Contacto</a>
     </div>
   </header>
