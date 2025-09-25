@@ -44,6 +44,7 @@
   right: 0;
   height: 100vh;
   background: #fff;
+  border-top: none;
   box-shadow: 0 8px 32px rgba(15,42,71,0.18);
   padding: 24px 18px 0 18px;
   z-index: 999;
@@ -62,16 +63,6 @@
   font-weight: 600;
   background: transparent;
   font-size: 1.15rem;
-}
-.drawer button {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #29445d;
-  cursor: pointer;
 }
 
     .container{max-width:var(--container);margin:0 auto;padding:24px}
@@ -306,6 +297,68 @@
     padding: 16px 4px 12px 4px;
   }
 }
+
+.cta-section {
+  background: var(--accent); /* verde de la paleta */
+  color: var(--ink);         /* azul de la paleta */
+  padding: 54px 0;
+  margin-bottom: 0;
+}
+.cta-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  color: var(--ink);
+}
+.cta-desc {
+  font-size: 1.18rem;
+  color: #0F2A47;
+  margin-bottom: 0;
+}
+.cta-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-btn {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  box-shadow: 0 4px 18px rgba(15,42,71,0.08);
+  transition: background .2s, color .2s;
+}
+.cta-btn:hover {
+  background: var(--ink);
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .cta-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  .cta-btn-wrap {
+    justify-content: center;
+  }
+  .cta-title {
+    font-size: 2rem;
+  }
+  .cta-desc {
+    font-size: 1rem;
+  }
+}
   </style>
   <!-- Font Awesome -->
   <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -324,7 +377,7 @@
       </div>
       <nav aria-label="Principal">
         <a href="#inicio">Inicio</a>
-        <a href="#ventajas">Ventajas</a>
+        <a href="#Beneficios">Beneficios</a>
         <a href="#modulos">Módulos</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#PreguntasFrecuentes">Preguntas frecuentes</a>
@@ -334,7 +387,6 @@
       <a class="btn btn-ghost cta-mini" href="#contacto">Contáctanos</a>
     </div>
     <div id="drawer" class="drawer">
-      <button onclick="toggleDrawer(false)" style="background:none;border:none;font-size:2rem;color:#29445d;position:absolute;top:18px;right:18px;cursor:pointer;" aria-label="Cerrar menú">×</button>
       <a href="#inicio" onclick="toggleDrawer(false)">Inicio</a>
       <a href="#ventajas" onclick="toggleDrawer(false)">Ventajas</a>
       <a href="#modulos" onclick="toggleDrawer(false)">Módulos</a>
@@ -353,7 +405,7 @@
         <h1 class="reveal">Controla accesos, gestiona membresías y crece con datos</h1>
         <p class="lead reveal">Gymetric automatiza accesos y membresías con un sistema biométrico confiable, fácil de usar y diseñado para crecer contigo.</p>
         <div class="reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-          <a class="btn btn-accent" href="https://wa.me/51983206483?text=Quiero%20una%20demo%20de%20Gymetric" target="_blank" rel="noopener">Solicita demo</a>
+          <a class="btn btn-accent" href="https://wa.me/51983206483?text=Quiero%20una%20demo%20de%20Gymetric" target="_blank" rel="noopener">Prueba gratis</a>
           <!--<a class="btn btn-primary" href="#planes">Ver planes</a>-->
         </div>
       </div>
@@ -366,9 +418,14 @@
     </div>
   </section>
 
-  <!-- VENTAJAS -->
-  <section id="ventajas" class="section">
-    <div class="container grid grid-3">
+  <!-- Beneficios -->
+  <!-- Reemplaza el título de la sección beneficios por este bloque alineado a la izquierda y con el mismo tamaño que "Módulos" -->
+<section id="ventajas" class="section">
+  <div class="container">
+    <h2 class="reveal" style="font-size:2rem;font-weight:800;letter-spacing:0.5px;color:var(--ink);margin-bottom:28px;text-align:left;">
+      Beneficios
+    </h2>
+    <div class="grid grid-3">
       <div class="card reveal tile">
         <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
         <div>
@@ -412,7 +469,8 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- MODULOS -->
   <section id="modulos" class="section" style="background:var(--paper)">
@@ -465,6 +523,18 @@
     </div>
   </section>
 
+
+  <section class="cta-section">
+  <div class="container cta-flex">
+    <div>
+      <h2 class="cta-title">¿Listo para automatizar tu negocio?</h2>
+      <p class="cta-desc">Solicita tu demo gratis de Gymetric y descubre cómo optimizar accesos y membresías en minutos.</p>
+    </div>
+    <div class="cta-btn-wrap">
+      <a class="btn btn-ghost cta-btn" href="https://wa.me/51983206483?text=Quiero%20una%20demo%20de%20Gymetric" target="_blank" rel="noopener">Solicita DEMO</a>
+    </div>
+  </div>
+</section>
   <!-- PLANES 
   <section id="planes" class="section">
     <div class="container">
