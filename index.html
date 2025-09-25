@@ -161,6 +161,23 @@
       margin-bottom: 28px;
       font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
     }
+
+    /* Responsive grid para objetivos: 3 columnas en tablet/móvil, 5 en desktop */
+    .objetivos-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .objetivos-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .objetivos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
   <!-- Font Awesome -->
   <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -389,7 +406,7 @@
       <!-- Objetivos debajo, horizontal -->
       <div class="card reveal card-tile" style="margin-top:32px;">
         <h3>Objetivos</h3>
-        <div class="grid" style="grid-template-columns:repeat(5,1fr); gap:18px;">
+        <div class="grid objetivos-grid">
           <div>
             <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
             <div>Facilitar la digitalización de establecimientos con una herramienta simple, flexible y accesible.</div>
