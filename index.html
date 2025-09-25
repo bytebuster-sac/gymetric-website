@@ -463,7 +463,7 @@
       <div class="card reveal">
         <h3>¿Prefieres WhatsApp?</h3>
         <p class="lead">Escríbenos y agenda tu demo.</p>
-        <a class="btn btn-accent" href="https://wa.me/51999999999?text=Hola%20Gymetric,%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-accent" href="https://wa.me/51983206483?text=Hola%20Gymetric,%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </section>
@@ -530,6 +530,27 @@
       }, 10);
     });
   </script>
+  <!-- Agrega este script antes de </body> -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector(".contact-form");
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.reset();
+      form.innerHTML = "<h2>¡Gracias!</h2><p>Tu mensaje fue enviado correctamente.</p>";
+    } else {
+      form.innerHTML = "<h2>Error</h2><p>No se pudo enviar el mensaje. Intenta nuevamente.</p>";
+    }
+  });
+});
+</script>
 </body>
 </html>
 
