@@ -106,6 +106,23 @@
     .contact-form textarea{min-height:130px;resize:vertical}
     .contact-form button{width:100%}
 
+    /* Unifica el estilo de los placeholders y campos del formulario */
+.contact-form input,
+.contact-form textarea {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* Estilo para los placeholders */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--muted);
+  opacity: 1;
+}
+
     footer{background:#0F2A47;color:#d9e6f5}
     footer a{color:#C6EF43}
     .footer-grid{display:grid;gap:14px;align-items:center}
@@ -181,6 +198,80 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Estilos para el modal de Términos y Condiciones */
+#modal-terminos {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,42,71,0.32);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 12px; /* margen arriba/abajo y lateral */
+}
+#modal-terminos > div {
+  background: #fff;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 40px 32px 32px 32px;
+  position: relative;
+  margin: auto;
+}
+@media (max-width: 900px) {
+  #modal-terminos > div {
+    max-width: 98vw;
+    padding: 24px 10px 18px 10px;
+  }
+}
+@media (max-width: 600px) {
+  #modal-terminos {
+    padding: 18px 2px;
+  }
+  #modal-terminos > div {
+    padding: 16px 4px 12px 4px;
+  }
+}
+
+/* Modal de Política de Privacidad: agrega esto antes de </body> */
+#modal-privacidad {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,42,71,0.32);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 12px; /* margen arriba/abajo y lateral */
+}
+#modal-privacidad > div {
+  background: #fff;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 40px 32px 32px 32px;
+  position: relative;
+  margin: auto;
+}
+@media (max-width: 900px) {
+  #modal-privacidad > div {
+    max-width: 98vw;
+    padding: 24px 10px 18px 10px;
+  }
+}
+@media (max-width: 600px) {
+  #modal-privacidad {
+    padding: 18px 2px;
+  }
+  #modal-privacidad > div {
+    padding: 16px 4px 12px 4px;
+  }
+}
   </style>
   <!-- Font Awesome -->
   <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -441,24 +532,24 @@
       <h2 class="reveal">Preguntas frecuentes</h2>
       <div class="grid grid-2" style="margin-top:12px; gap:32px;">
         <div class="card reveal">
-          <h3>¿Cómo funciona el sistema biométrico?</h3>
-          <p>El sistema utiliza lectores de huellas digitales para registrar y verificar la identidad de los usuarios, permitiendo un control de acceso seguro y eficiente.</p>
+          <h3>¿Qué es Gymetric?</h3>
+          <p>Gymetric es un sistema de control de asistencia biométrica que utiliza tecnología de huellas digitales para gestionar el acceso y la seguridad en establecimientos.</p>
         </div>
         <div class="card reveal">
-          <h3>¿Es compatible con múltiples sedes?</h3>
-          <p>Sí, Gymetric está diseñado para gestionar múltiples sedes desde una sola plataforma, facilitando la administración centralizada.</p>
+          <h3>¿Cómo funciona el sistema biométrico?</h3>
+          <p>El sistema utiliza lectores de huellas digitales para registrar y verificar la identidad de los usuarios, permitiendo un control de acceso seguro y eficiente.</p>
         </div>
         <div class="card reveal">
           <h3>¿Qué medidas de seguridad tienen mis datos?</h3>
           <p>Utilizamos encriptación avanzada y protocolos de seguridad para proteger toda la información almacenada en nuestra plataforma.</p>
         </div>
         <div class="card reveal">
-          <h3>¿Puedo personalizar los planes de membresía?</h3>
-          <p>Sí, puedes crear y editar planes de membresía según las necesidades de tu negocio, incluyendo duración, precios y beneficios.</p>
+          <h3>¿Es compatible con múltiples sedes?</h3>
+          <p>El sistema utiliza lectores de huellas digitales para registrar y verificar la identidad de los usuarios, permitiendo un control de acceso seguro y eficiente.</p>
         </div>
         <div class="card reveal">
           <h3>¿Qué tipo de soporte ofrecen?</h3>
-          <p>Ofrecemos soporte técnico continuo a través de chat, correo electrónico y asistencia telefónica para resolver cualquier duda o problema.</p>
+          <p>Ofrecemos soporte técnico continuo a través de chat, correo electrónico, asistencia telefónica y presencial para resolver cualquier duda o problema.</p>
         </div>
         <div class="card reveal">
           <h3>¿Cómo puedo solicitar una demo?</h3>
@@ -494,16 +585,16 @@
       <h2 class="reveal">Síguenos</h2>
       <p class="lead reveal">Novedades, lanzamientos y tips para gimnasios.</p>
       <div class="icons reveal" style="margin-top:12px">
-        <a class="iconbtn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+        <a class="iconbtn" href="https://www.instagram.com/gymetric.app/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener" aria-label="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.3 1.1.7 1.6 1.2.5.5.9 1 1.2 1.6.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.3.6-.7 1.1-1.2 1.6-.5.5-1 .9-1.6 1.2-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.3-1.1-.7-1.6-1.2-.5-.5-.9-1-1.2-1.6-.2-.4-.4-1.1-.5-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.3-.6.7-1.1 1.2-1.6.5-.5 1-.9 1.6-1.2.4-.2 1.1-.4 2.3-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 0-1.5.2-1.8.3-.5.2-.8.4-1.2.7-.3.3-.5.7-.7 1.2-.1.3-.3.8-.3 1.8-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 1 .2 1.5.3 1.8.2.5.4.8.7 1.2.3.3.7.5 1.2.7.3.1.8.3 1.8.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1 0 1.5-.2 1.8-.3.5-.2.8-.4 1.2-.7.3-.3.5-.7.7-1.2.1-.3.3-.8.3-1.8.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.2-.3-.3-.7-.5-1.2-.7-.3-.1-.8-.3-1.8-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.3a5.4 5.4 0 110 10.8 5.4 5.4 0 010-10.8zm0 1.8a3.6 3.6 0 100 7.2 3.6 3.6 0 000-7.2zm5.7-2.1a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6z"/></svg>
         </a>
-        <a class="iconbtn" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+        <a class="iconbtn" href="https://www.facebook.com/profile.php?id=61579049394355" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.49 17.52 2 11.94 2S2 6.49 2 12.06C2 17.04 5.66 21.11 10.4 22v-7h-2.5v-2.94h2.5V9.8c0-2.47 1.47-3.83 3.72-3.83 1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56v1.88h2.74l-.44 2.94h-2.3v7C18.34 21.11 22 17.04 22 12.06z"/></svg>
         </a>
-        <a class="iconbtn" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="iconbtn" href="https://www.linkedin.com/in/bytebuster-sac-377b42386/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.43 8.09h4.14V24H.43V8.09zM8.21 8.09h3.97v2.17h.06c.55-1.04 1.9-2.14 3.91-2.14 4.18 0 4.95 2.75 4.95 6.33V24h-4.14v-7.02c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.69V24H8.21V8.09z"/></svg>
         </a>
-        <a class="iconbtn" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+        <a class="iconbtn" href="https://www.tiktok.com/@gymetric8?_t=ZS-90257iWyViE&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8.5c-2.1 0-3.9-.7-5.2-2.2V17a7 7 0 11-7-7c.3 0 .6 0 .9.1V13a3 3 0 103-3V2h3.1c.5 2.7 2.4 4.6 5.1 5.1V8.5z"/></svg>
         </a>
       </div>
@@ -515,11 +606,6 @@
       <div>© <span id="y"></span> Gymetric · ByteBuster S.A.C.</div>
       <div class="footer-links">
         <a href="#terminos">Términos</a> · <a href="#privacidad">Privacidad</a> · <a href="#libro">Libro de Reclamaciones</a>
-      </div>
-      <div class="social" aria-label="Redes sociales">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">IG</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener" title="Facebook">FB</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">IN</a>
       </div>
     </div>
   </footer>
@@ -570,6 +656,79 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+</script>
+
+<!-- Modal de Términos y Condiciones -->
+<div id="modal-terminos" style="display:none; position:fixed; inset:0; background:rgba(15,42,71,0.32); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; max-width:720px; width:100%; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.18); padding:40px 32px 32px 32px; position:relative; margin:auto;">
+    <button onclick="cerrarModalTerminos()" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:28px; color:#0F2A47; cursor:pointer;">×</button>
+    <h2 style="margin-top:0;">Términos y Condiciones</h2>
+    <p>Última actualización: 25/09/25</p>
+    <ul>
+      <li><strong>Objeto del sitio web:</strong> Este sitio tiene como finalidad brindar información sobre nuestros servicios de control de accesos biométricos, gestión de membresías y soluciones tecnológicas para establecimientos y negocios.</li>
+      <li><strong>Uso permitido:</strong> El usuario se compromete a utilizar el sitio de manera responsable y conforme a la ley, sin emplearlo para fines ilícitos, difamatorios o que afecten a terceros.</li>
+      <li><strong>Propiedad intelectual:</strong> Todos los contenidos de este sitio, incluyendo textos, gráficos, logotipos, íconos, imágenes, videos y software, son propiedad de ByteBuster S.A.C. o de terceros que han autorizado su uso. Queda prohibida su reproducción total o parcial sin autorización previa y por escrito.</li>
+      <li><strong>Formularios de contacto:</strong> El usuario puede enviar consultas a través del formulario habilitado en el sitio. La información proporcionada será utilizada únicamente para dar respuesta a las solicitudes recibidas y para fines comerciales relacionados con nuestros servicios, respetando lo indicado en nuestra <a href="#privacidad">Política de Privacidad</a>.</li>
+      <li><strong>Responsabilidad:</strong>
+        <ul>
+          <li><strong>Disponibilidad:</strong> No garantizamos que el sitio esté libre de interrupciones, errores técnicos o caídas del servidor.</li>
+          <li><strong>Información:</strong> El contenido del sitio es meramente informativo y puede actualizarse o modificarse sin previo aviso.</li>
+          <li><strong>Exoneración:</strong> ByteBuster no se responsabiliza por daños directos o indirectos que pudieran derivarse del uso del sitio.</li>
+        </ul>
+      </li>
+      <li><strong>Enlaces a terceros:</strong> Este sitio puede incluir enlaces a sitios externos de terceros. ByteBuster no se responsabiliza por el contenido ni por las políticas de privacidad de dichos sitios.</li>
+      <li><strong>Modificaciones:</strong> Nos reservamos el derecho de modificar en cualquier momento estos Términos y Condiciones, cuya última versión estará siempre disponible en este sitio.</li>
+      <li><strong>Legislación aplicable:</strong> Estos Términos y Condiciones se regirán por las leyes de la República del Perú.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href="#terminos"]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      document.getElementById('modal-terminos').style.display = 'flex';
+    });
+  });
+  function cerrarModalTerminos(){
+    document.getElementById('modal-terminos').style.display = 'none';
+  }
+  document.getElementById('modal-terminos').addEventListener('click', function(e){
+    if(e.target === this) cerrarModalTerminos();
+  });
+</script>
+
+<!-- Modal de Política de Privacidad -->
+<div id="modal-privacidad" style="display:none; position:fixed; inset:0; background:rgba(15,42,71,0.32); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; max-width:720px; width:100%; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.18); padding:40px 32px 32px 32px; position:relative; margin:auto;">
+    <button onclick="cerrarModalPrivacidad()" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:28px; color:#0F2A47; cursor:pointer;">×</button>
+    <h2 style="margin-top:0;">Política de Privacidad</h2>
+    <p>Última actualización: 25/09/25</p>
+    <ul>
+      <li><strong>Recopilación de datos:</strong> Recopilamos información personal como nombre y correo electrónico únicamente cuando el usuario la proporciona voluntariamente a través de formularios de contacto.</li>
+      <li><strong>Uso de la información:</strong> Los datos recopilados se utilizan exclusivamente para responder consultas, brindar información sobre nuestros servicios y mejorar la experiencia del usuario.</li>
+      <li><strong>Protección de datos:</strong> Implementamos medidas de seguridad para proteger la información personal contra accesos no autorizados, alteraciones o divulgaciones.</li>
+      <li><strong>Compartir información:</strong> No compartimos datos personales con terceros, salvo obligación legal o autorización expresa del usuario.</li>
+      <li><strong>Derechos del usuario:</strong> El usuario puede solicitar la actualización, rectificación o eliminación de sus datos personales enviando una solicitud a nuestro correo de contacto.</li>
+      <li><strong>Cookies:</strong> Este sitio puede utilizar cookies para mejorar la navegación. El usuario puede configurar su navegador para rechazar las cookies si lo prefiere.</li>
+      <li><strong>Modificaciones:</strong> Nos reservamos el derecho de modificar esta política en cualquier momento. La versión vigente estará siempre disponible en este sitio.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('a[href="#privacidad"]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      document.getElementById('modal-privacidad').style.display = 'flex';
+    });
+  });
+  function cerrarModalPrivacidad(){
+    document.getElementById('modal-privacidad').style.display = 'none';
+  }
+  document.getElementById('modal-privacidad').addEventListener('click', function(e){
+    if(e.target === this) cerrarModalPrivacidad();
+  });
 </script>
 </body>
 </html>
