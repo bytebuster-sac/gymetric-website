@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gymetric · Alterna</title>
+  <title>Gymetric</title>
   <meta name="description" content="Landing alternativa de Gymetric: control biométrico para gimnasios." />
   <meta name="theme-color" content="#F1F2EE" />
 
@@ -46,6 +46,10 @@
     .btn-ghost{background:transparent;border:2px solid #1f3850;color:#1f3850}
     .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#5b6870;font-size:12px}
     .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card:hover { 
+      transform: translateY(-6px); /* se levanta un poco */
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); /* sombra más fuerte */
+      }
     .section{padding:70px 0}
     h1{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:10px 0}
     h2{font-size:clamp(26px,4.6vw,36px);margin:0 0 8px}
@@ -58,11 +62,28 @@
     .device .lcd b{color:#C6EF43}
 
     .tile{display:flex;gap:12px;align-items:flex-start}
-    .icon{width:38px;height:38px;border-radius:10px;background:#0F2A47;color:#C6EF43;display:grid;place-items:center;font-weight:800}
+    .card-icon{font-size: 28px; margin-top: 18px;       /* tamaño del ícono */
+      color: #C6EF43;        /* color principal (azul oscuro) */
+      background: none;      /* quita el cuadrito azul */
+      width: auto;
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;}
+
+      .mod-icon{font-size: 32px; margin-top: 6px;    margin-left: -4px;   /* tamaño del ícono */
+      color: #C6EF43;        /* color principal (azul oscuro) */
+      background: none;      /* quita el cuadrito azul */
+      width: auto;
+      height: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;}
+
 
     .check{list-style:none;padding:0;margin:0}
     .check li{display:flex;gap:8px;margin:8px 0}
-    .check li::before{content:'✔';color:#23a95a;font-weight:900}
+    .check li::before{content:'✔';color:var(--ink);font-weight:900}
 
     .reveal{opacity:0;transform:translateY(10px);transition:opacity .45s ease, transform .45s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
@@ -86,21 +107,72 @@
     .iconbtn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(15,42,71,.18)}
     .iconbtn svg{width:26px;height:26px;display:block}
     .iconbtn svg path{fill:#C6EF43}
+
+    .card-tile {
+  display: block;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.card-tile .card-icon,
+.card-tile .mod-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #C6EF43;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.card-tile h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/* Solo para el título "Objetivos" */
+.card-tile > h3 {
+  font-size: 2rem;      /* más grande que el default */
+  font-weight: 800;     /* más grueso */
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;  /* mantiene el espacio debajo de "Objetivos" */
+}
+.card-tile p {
+  margin-bottom: 0;
+}
+
+/* Títulos grandes y consistentes para Misión, Visión, Objetivos, Nosotros, Módulos y Contáctanos */
+.card-tile > h3,
+.card-tile-title,
+h2.reveal,
+.contact-form h2,
+#nosotros h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
   </style>
+  <!-- Font Awesome -->
+  <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/sharp-thin.css" rel="stylesheet" />
+  <link href="assets/fontawesome/css/sharp-duotone-thin.css" rel="stylesheet" />
+
+
 </head>
 <body>
   <header>
     <div class="nav">
       <div class="brand">
-        <img src="img/Gymmetric Logo_Icono Verde.svg" alt="Gymetric" />
-        <b>GYMETRIC</b>
+        <img src="img/Gymmetric Logo_Horizontal Verde.svg" alt="Gymetric"/>
       </div>
       <nav aria-label="Principal">
         <a href="#inicio">Inicio</a>
         <a href="#ventajas">Ventajas</a>
         <a href="#modulos">Módulos</a>
-        <a href="#planes">Planes</a>
         <a href="#nosotros">Nosotros</a>
+        <a href="#Preguntas frecuentes">Preguntas frecuentes</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button class="hamb" onclick="toggleDrawer()">☰</button>
@@ -110,8 +182,8 @@
       <a href="#inicio" onclick="toggleDrawer(false)">Inicio</a>
       <a href="#ventajas" onclick="toggleDrawer(false)">Ventajas</a>
       <a href="#modulos" onclick="toggleDrawer(false)">Módulos</a>
-      <a href="#planes" onclick="toggleDrawer(false)">Planes</a>
       <a href="#nosotros" onclick="toggleDrawer(false)">Nosotros</a>
+      <a href="#Preguntas frecuentes" onclick="toggleDrawer(false)">Preguntas frecuentes</a>
       <a href="#contacto" onclick="toggleDrawer(false)">Contacto</a>
     </div>
   </header>
@@ -126,21 +198,14 @@
         <p class="lead reveal">Gymetric automatiza accesos y membresías con un sistema biométrico confiable, fácil de usar y diseñado para crecer contigo.</p>
         <div class="reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
           <a class="btn btn-accent" href="https://wa.me/51983206483?text=Quiero%20una%20demo%20de%20Gymetric" target="_blank" rel="noopener">Solicita demo</a>
-          <a class="btn btn-primary" href="#planes">Ver planes</a>
+          <!--<a class="btn btn-primary" href="#planes">Ver planes</a>-->
         </div>
       </div>
-      <div class="device reveal in">
-        <div class="lcd" style="display:flex; align-items:center; justify-content:center;">
-          <img src="img/ChatGPT Image 22 sept 2025, 06_16_41 p.m..png" 
-             alt="Vista Gymetric" 
-             style="max-width:70%; height:auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.25);">
-          <!-- Texto de respaldo (solo si la imagen no carga) -->
-          <noscript>
-            <div style="color:#C6EF43; font-weight:600; margin-top:12px;">
-              Gymetric READY
-            </div>
-          </noscript>
-        </div>
+      <!-- Reemplaza el bloque del dispositivo en el hero por este más simple y claro -->
+      <div class="device reveal in" style="background: none; border-radius:32px; padding:32px; box-shadow:0 16px 50px rgba(15,42,71,.18); display:flex; align-items:center; justify-content:center;">
+        <img src="img/Imagen de WhatsApp 2025-09-24 a las 21.55.28_f7777c30.jpg"
+             alt="Vista Gymetric"
+             style="max-width:100%; height:auto; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
       </div>
     </div>
   </section>
@@ -149,24 +214,45 @@
   <section id="ventajas" class="section">
     <div class="container grid grid-3">
       <div class="card reveal tile">
-        <div class="icon">⏱</div>
+        <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
         <div>
-          <h3>Instalación express</h3>
-          <p class="lead">Empiezas a registrar en minutos; sin enredos.</p>
+          <h3>Automatización completa</h3>
+          <p class="lead">Elimina el uso de planillas y registros manuales. Gymetric registra y organiza todo por ti.</p>
         </div>
       </div>
       <div class="card reveal tile">
-        <div class="icon">🔒</div>
+        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
         <div>
-          <h3>Accesos seguros</h3>
-          <p class="lead">Huella + bloqueo por membresía vencida.</p>
+          <h3>Gestión integral</h3>
+          <p class="lead">Administra clientes, membresías y tarifas desde un solo lugar, con total facilidad.</p>
         </div>
       </div>
       <div class="card reveal tile">
-        <div class="icon">📊</div>
+        <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
         <div>
-          <h3>Datos útiles</h3>
-          <p class="lead">Reportes claros de actividad y renovaciones.</p>
+          <h3>Seguridad avanzada</h3>
+          <p class="lead">Datos protegidos con encriptación y acceso solo para usuarios autorizados.</p>
+        </div>
+      </div>
+      <div class="card reveal tile">
+        <div class="card-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+        <div>
+          <h3>Copias de seguridad automáticas</h3>
+          <p class="lead">Mantén tu información protegida gracias a respaldos periódicos en la nube.</p>
+        </div>
+      </div>
+      <div class="card reveal tile">
+        <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+        <div>
+          <h3>Soporte cercano</h3>
+          <p class="lead">Acompañamiento técnico continuo para resolver cualquier situación de manera rápida y efectiva.</p>
+        </div>
+      </div>
+      <div class="card reveal tile">
+        <div class="card-icon"><i class="fa-solid fa-display"></i></div>
+        <div>
+          <h3>Interfaz amigable</h3>
+          <p class="lead">Fácil de aprender y usar, pensada para el trabajo diario en gimnasios y centros deportivos.</p>
         </div>
       </div>
     </div>
@@ -177,17 +263,53 @@
     <div class="container">
       <h2 class="reveal">Módulos</h2>
       <div class="grid grid-3" style="margin-top:12px">
-        <div class="card reveal"><strong>Asistencias</strong><ul class="check"><li>Integración con huella</li><li>Logs en tiempo real</li></ul></div>
-        <div class="card reveal"><strong>Planes y pagos</strong><ul class="check"><li>Planes flexibles</li><li>Historial y vencimientos</li></ul></div>
-        <div class="card reveal"><strong>Clientes</strong><ul class="check"><li>Ficha por socio</li><li>Etiquetas y notas</li></ul></div>
-        <div class="card reveal"><strong>Membresías</strong><ul class="check"><li>Renovación rápida</li><li>Alertas automáticas</li></ul></div>
-        <div class="card reveal"><strong>Reportes</strong><ul class="check"><li>Asistencias por rango</li><li>KPIs simples</li></ul></div>
-        <div class="card reveal"><strong>Usuarios y roles</strong><ul class="check"><li>Permisos por rol</li><li>Auditoría básica</li></ul></div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-fingerprint"></i></div>
+          <div>
+            <strong>Control de Asistencias</strong>
+            <ul class="check"><li>Registro de entradas mediante lector biométrico.</li><li>Historial de asistencia por usuario.</li></ul>
+          </div>
+        </div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+          <div>
+            <strong>Área de Planes y pagos</strong>
+            <ul class="check"><li>Crear y editar planes de membresía (duración, precios).</li><li>Asignación automática de planes y control de vencimientos.</li></ul>
+          </div>
+        </div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <strong>Registro de Clientes</strong>
+            <ul class="check"><li>Base de datos completa.</li><li>Búsqueda y filtrado por ID, nombre o plan para acceso rápido.</li></ul>
+          </div>
+        </div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div>
+            <strong>Gestión de Membresías</strong>
+            <ul class="check"><li>Renovación y vencimiento automático</li><li>Gestión de cambios de plan y control de estados (activo, suspendido, vencido).</li></ul>
+          </div>
+        </div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <strong>Reportes</strong>
+            <ul class="check"><li>Informes de ingresos y vencimientos por periodo.</li><li>Reportes de asistencia y uso por cliente o por plan.</li></ul>
+          </div>
+        </div>
+        <div class="card reveal tile">
+          <div class="mod-icon"><i class="fa-solid fa-user-shield"></i></div> 
+          <div>
+            <strong>Usuarios y roles</strong>
+            <ul class="check"><li>Control de accesos con roles (admin, recepcionista, entrenador).</li><li>Permisos por módulo para limitar y auditar acciones del personal.</li></ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PLANES -->
+  <!-- PLANES 
   <section id="planes" class="section">
     <div class="container">
       <h2 class="reveal">Planes y precios</h2>
@@ -214,31 +336,75 @@
       </div>
     </div>
   </section>
+-->
 
   <!-- NOSOTROS -->
-  <section id="nosotros" class="section" style="background:var(--paper)">
+  <section id="nosotros" class="section">
     <div class="container grid grid-2">
       <div class="reveal">
-        <h2>Nosotros</h2>
-        <p class="lead">ByteBuster S.A.C. crea soluciones accesibles y enfocadas en impacto real. Con Gymetric, elevamos el control de acceso y la gestión de socios para gimnasios en crecimiento.</p>
-        <ul class="check"><li>Equipo cercano</li><li>Entrega rápida</li><li>Mejora continua</li></ul>
+        <h3 class="card-tile-title">Nosotros</h3>
+        <p class="lead">En ByteBuster, somos una empresa de desarrollo tecnológico dedicada a crear soluciones digitales accesibles, seguras e innovadoras para pequeñas, medianas y grandes empresas.</p>
+        <p class="lead">Gymetric es el reflejo de esa visión: un software especializado que simplifica la gestión y el control de procesos, adaptándose a las necesidades reales de cada establecimiento.</p>
+        <p class="lead">Nos diferenciamos por combinar tecnología de alto nivel con un enfoque cercano y humano, ofreciendo soporte continuo y modelos de implementación flexibles. Creemos que la digitalización no debe ser un lujo, sino una herramienta disponible para todos los negocios que buscan crecer.</p>
+        <p class="lead">Con cada proyecto, buscamos impulsar la confianza, la eficiencia y la seguridad en la transformación digital de nuestros clientes, acompañándolos en cada paso de su crecimiento.</p>
+        <ul class="check"><li><b>Equipo cercano</b></li><li><b>Entrega rápida</b></li><li><b>Mejora continua</b></li></ul>
       </div>
-      <div class="card reveal">
-        <h3>Integrantes</h3>
-        <p class="lead">Agrega los nombres y roles del equipo.</p>
-        <ul class="check"><li>Nombre 1 — Rol</li><li>Nombre 2 — Rol</li><li>Nombre 3 — Rol</li></ul>
+      <div class="card reveal" style="background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); padding: 28px 18px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 18px;">Integrantes</h3>
+        <div style="width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 18px;">
+          <img src="img/Gemini_Generated_Image_j1pm5jj1pm5jj1pm.png" alt="Integrante 1" style="width: 100%; height: 110px; object-fit: cover; border-radius: 18px;">
+          <img src="img/Gemini_Generated_Image_2ljphx2ljphx2ljp.png" alt="Integrante 2" style="width: 100%; height: 110px; object-fit: cover; border-radius: 18px;">
+          <img src="img/Gemini_Generated_Image_7jb7kb7jb7kb7jb7.png" alt="Integrante 3" style="width: 100%; height: 110px; object-fit: cover; border-radius: 18px;">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MISION / VISION / OBJETIVOS -->
-  <section class="section">
-    <div class="container grid grid-3">
-      <div class="card reveal"><h3>Misión</h3><p>Digitalizar y simplificar la operación de gimnasios con biometría y datos.</p></div>
-      <div class="card reveal"><h3>Visión</h3><p>Ser la plataforma biométrica más confiable para gimnasios en LATAM.</p></div>
-      <div class="card reveal"><h3>Objetivos</h3><ul class="check"><li>Escalar en Perú y región</li><li>Mejorar analítica</li><li>Garantizar soporte excelente</li></ul></div>
+
+  <!-- MISION / VISION / OBJETIVOS-->
+  <section class="section" style="background:var(--paper)">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1fr 1fr; gap:32px;">
+        <!-- Visión -->
+        <div class="card reveal card-tile">
+          <h3>Visión Nosotros</h3>
+          <p>Ser la plataforma líder en control de asistencia biométrica y gestión de negocios, reconocida por su seguridad, accesibilidad y capacidad de impulsar el crecimiento de establecimientos de cualquier tamaño.</p>
+        </div>
+        <!-- Misión -->
+        <div class="card reveal card-tile">
+          <h3>Misión</h3>
+          <p>Ofrecer un sistema de control biométrico y administración adaptable a distintos negocios, que automatice procesos, garantice la seguridad de los datos y brinde soporte cercano, ayudando a optimizar la gestión diaria y facilitando el crecimiento de cada cliente.</p>
+        </div>
+      </div>
+      <!-- Objetivos debajo, horizontal -->
+      <div class="card reveal card-tile" style="margin-top:32px;">
+        <h3>Objetivos</h3>
+        <div class="grid" style="grid-template-columns:repeat(5,1fr); gap:18px;">
+          <div>
+            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>Facilitar la digitalización de establecimientos con una herramienta simple, flexible y accesible.</div>
+          </div>
+          <div>
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>Garantizar seguridad en el manejo de datos mediante tecnología biométrica confiable.</div>
+          </div>
+          <div>
+            <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+            <div>Automatizar procesos clave, como control de accesos, gestión de clientes y administración de pagos.</div>
+          </div>
+          <div>
+            <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+            <div>Brindar soporte continuo (remoto y presencial) para asegurar una experiencia sin complicaciones.</div>
+          </div>
+          <div>
+            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>Impulsar la eficiencia y crecimiento de los negocios, transformando su gestión en un proceso más profesional y confiable.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!-- CONTACTO -->
   <section id="contacto" class="section">
@@ -322,3 +488,5 @@
   </script>
 </body>
 </html>
+
+
