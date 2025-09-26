@@ -36,11 +36,13 @@
     nav a{color:#29445d;text-decoration:none;font-weight:600;opacity:.85}
     nav a:hover{opacity:1}
     .hamb {
-  color: var(--ink); /* azul de tu paleta */
-  font-size: 2rem;
+  display: none; /* Oculto por defecto */
+  color: var(--ink);
+  font-size: 1.4rem;
   border: none;
   background: transparent;
   cursor: pointer;
+  transition: color .2s;
 }
     .cta-mini{display:none}
     @media (max-width:900px){ nav{display:none} .hamb{display:inline-block} .cta-mini{display:inline-flex} }
@@ -67,7 +69,7 @@
   padding: 18px 6px;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
-  color: #29445d;
+  /* color: #29445d; */
   font-weight: 600;
   background: transparent;
   font-size: 1.15rem;
@@ -440,7 +442,7 @@
     <div id="drawer" class="drawer">
       <button onclick="toggleDrawer(false)" style="background:none;border:none;font-size:2rem;color:#29445d;position:absolute;top:18px;right:18px;cursor:pointer;" aria-label="Cerrar menú">×</button>
       <a href="#inicio" onclick="toggleDrawer(false)">Inicio</a>
-      <a href="#Beneficios" onclick="toggleDrawer(false)">Ventajas</a>
+      <a href="#Beneficios" onclick="toggleDrawer(false)">Beneficios</a>
       <a href="#modulos" onclick="toggleDrawer(false)">Módulos</a>
       <a href="#nosotros" onclick="toggleDrawer(false)">Nosotros</a>
       <a href="#PreguntasFrecuentes" onclick="toggleDrawer(false)">Preguntas frecuentes</a>
@@ -472,7 +474,7 @@
 
   <!-- Beneficios -->
   <!-- Reemplaza el título de la sección beneficios por este bloque alineado a la izquierda y con el mismo tamaño que "Módulos" -->
-<section id="ventajas" class="section">
+<section id="Beneficios" class="section">
   <div class="container">
     <h2 class="reveal" style="font-size:2rem;font-weight:800;letter-spacing:0.5px;color:var(--ink);margin-bottom:28px;text-align:left;">
       Beneficios
