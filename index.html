@@ -359,6 +359,43 @@
     font-size: 1rem;
   }
 }
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1200;
+  background: var(--ink); /* azul de tu paleta */
+  color: #fff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 6px 24px rgba(15,42,71,0.18);
+  transition: box-shadow .18s, transform .18s;
+  cursor: pointer;
+  text-decoration: none; /* quita la rayita debajo del icono */
+}
+.whatsapp-float:hover {
+  box-shadow: 0 12px 32px rgba(15,42,71,0.28);
+  transform: scale(1.08);
+  background: #132436; /* azul más oscuro al pasar el mouse */
+}
+.whatsapp-float i {
+  text-decoration: none; /* asegura que el icono no tenga rayita */
+}
+@media (max-width:600px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+    right: 12px;
+    bottom: 12px;
+  }
+}
   </style>
   <!-- Font Awesome -->
   <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
@@ -367,8 +404,14 @@
   <link href="assets/fontawesome/css/sharp-thin.css" rel="stylesheet" />
   <link href="assets/fontawesome/css/sharp-duotone-thin.css" rel="stylesheet" />
 
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/51983206483?text=Hola%20Gymetric,%20quiero%20informaci%C3%B3n" 
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </head>
+
 <body>
   <header>
     <div class="nav">
